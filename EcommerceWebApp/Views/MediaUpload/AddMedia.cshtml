@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "AddMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" enctype="multipart/form-data" asp-action="AddMedia">
+    
+            <input type="file" name="iformfile" />
+            <input type="submit" value="Upload" />
+     
+</form>
+@if (ViewBag.Massage!=null)
+{
+    @ViewBag.Massage;
+}

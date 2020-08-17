@@ -1,0 +1,17 @@
+﻿@model IEnumerable<EcommerceWebApp.Models.Media>
+
+@{
+    ViewData["Title"] = "MediaGallary";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>MediaGallary</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@foreach (var item in Model)
+{
+    <img src="~/images/shop/@item.FilePath" />
+}
