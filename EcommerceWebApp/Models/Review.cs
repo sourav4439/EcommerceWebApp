@@ -12,6 +12,9 @@ namespace EcommerceWebApp.Models
         public string Time { get; set; }
         public string Decription { get; set; }
         public int Rating { get; set; }
+        public Product product { get; set; }
+        public int ProductId { get; set; }
+
 
     }
 }

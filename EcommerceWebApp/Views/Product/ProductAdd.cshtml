@@ -5,91 +5,95 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>ProductAdd</h2>
+<h2>Product Add</h2>
 
-<h4>Product</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="ProductAdd">
+
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductName" class="control-label"></label>
-                <input asp-for="ProductName" class="form-control" />
+
+            <div class="input-group">
+                <label asp-for="ProductName" class="input-group-addon"> <i class="fa fa-shopping-cart"></i></label>
+                <input asp-for="ProductName" class="form-control" placeholder="Product Name" />
                 <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="WebId" class="control-label"></label>
-                <input asp-for="WebId" class="form-control" />
+            <br />
+            <div class="input-group">
+                <label asp-for="WebId" class="input-group-addon"><i class="glyphicon glyphicon-registration-mark"></i></label>
+                <input asp-for="WebId" class="form-control" placeholder="WebId" />
                 <span asp-validation-for="WebId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Condition" class="control-label"></label>
-                <input asp-for="Condition" class="form-control" />
+            <br />
+            <div class="input-group">
+                <label asp-for="Condition" class="input-group-addon"><i class=" glyphicon glyphicon-eye-open "></i></label>
+                <input asp-for="Condition" class="form-control" placeholder="Condition" />
                 <span asp-validation-for="Condition" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BandName" class="control-label"></label>
-                <input asp-for="BandName" class="form-control" />
+            </div> <br />
+            <div class="input-group">
+                <label asp-for="BandName" class="input-group-addon"><i class="glyphicon glyphicon-bold"></i></label>
+                <input asp-for="BandName" class="form-control" placeholder="BandName" />
                 <span asp-validation-for="BandName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+            </div> <br />
+            <div class="input-group">
+                <label asp-for="Description" class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></label>
+                <input asp-for="Description" class="form-control" placeholder="Description" />
                 <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
+            </div> <br />
+            <div class="input-group">
+                <label asp-for="Price" class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></label>
+                <input asp-for="Price" class="form-control" placeholder="Price" />
                 <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FeaturePhoto" class="control-label"></label>
-                <input asp-for="FeaturePhoto" class="form-control" />
+            </div> <br />
+            <div class="input-group">
+                <label asp-for="FeaturePhoto" class="input-group-addon"><i class=" glyphicon glyphicon-picture "></i></label>
+                <input asp-for="FeaturePhoto" class="form-control" placeholder="FeaturePhoto" />
                 <span asp-validation-for="FeaturePhoto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SidePhotoOne" class="control-label"></label>
-                <input asp-for="SidePhotoOne" class="form-control" />
+            </div> <br />
+            <div class="input-group">
+                <label asp-for="SidePhotoOne" class="input-group-addon"><i class=" glyphicon glyphicon-picture "></i></label>
+                <input asp-for="SidePhotoOne" class="form-control" placeholder="SidePhotoOne" />
                 <span asp-validation-for="SidePhotoOne" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SidePhotoTwo" class="control-label"></label>
-                <input asp-for="SidePhotoTwo" class="form-control" />
+            </div> <br />
+            <div class="input-group">
+                <label asp-for="SidePhotoTwo" class="input-group-addon"><i class=" glyphicon glyphicon-picture "></i></label>
+                <input asp-for="SidePhotoTwo" class="form-control" placeholder="SidePhotoTwo" />
                 <span asp-validation-for="SidePhotoTwo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SidePhotoThree" class="control-label"></label>
-                <input asp-for="SidePhotoThree" class="form-control" />
+            </div> <br />
+            <div class="input-group">
+                <label asp-for="SidePhotoThree" class="input-group-addon"><i class=" glyphicon glyphicon-picture "></i></label>
+                <input asp-for="SidePhotoThree" class="form-control" placeholder="SidePhotoThree" />
                 <span asp-validation-for="SidePhotoThree" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <input asp-for="CategoryId" class="form-control" />
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CompanyId" class="control-label"></label>
-                <input asp-for="CompanyId" class="form-control" />
+            </div> <br />
+         
+
+            <div class="input-group">
+                <label asp-for="CompanyId" class="input-group-addon"><i class="glyphicon glyphicon-tower"></i> Select Company</label>
+                <select asp-for="CompanyId" asp-items="ViewBag.Company" class="form-control">
+                    
+                </select>
                 <span asp-validation-for="CompanyId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReviewId" class="control-label"></label>
-                <input asp-for="ReviewId" class="form-control" />
-                <span asp-validation-for="ReviewId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TagId" class="control-label"></label>
-                <input asp-for="TagId" class="form-control" />
+            </div><br />
+            <div class="input-group">
+                <label asp-for="CategoryId" class="input-group-addon"><i class=" glyphicon glyphicon-pencil "></i> Select Category</label>
+                <select asp-for="CategoryId" asp-items="ViewBag.category" class="form-control">
+                   
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div><br />
+            <div class="input-group">
+                <label asp-for="TagId" class="input-group-addon"><i class="glyphicon glyphicon-tags"></i> Select Tag</label>
+                <select asp-for="TagId" asp-items="ViewBag.Tag" class="form-control">
+                   
+                </select>
                 <span asp-validation-for="TagId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+            </div><br />
+           
+            <div class="input-group">
+                <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i>Save</button>
             </div>
         </form>
     </div>

@@ -46,6 +46,9 @@ namespace EcommerceWebApp
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddTransient<IproductRepo, ProductRepo>();
             services.AddTransient<IMediarepo, MediaRepo>();
+            services.AddTransient<ICategoryrepo, CategoryRepo>();
+            services.AddTransient<ICompanyrepo, Companyrepo>();
+            services.AddTransient<ITagrepo, Tagrepo>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

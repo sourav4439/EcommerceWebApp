@@ -5,13 +5,18 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>MediaGallary</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h2>Upload your Media File Here...</h2>
+<div>
+    <form method="post" enctype="multipart/form-data" asp-action="AddMedia">
 
+        <input type="file" name="iformfile" multiple />
+        <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i>Upload</button>
+        
+    </form>
+</div>
+<Center><h2>MediaGallary</h2></Center>
 @foreach (var item in Model)
 {
-    <img src="~/images/shop/@item.FilePath" />
+    <img style="width:150px;height:150px;margin:5px;border: 2px solid blue;" src="~/images/shop/@item.FilePath" />
 }

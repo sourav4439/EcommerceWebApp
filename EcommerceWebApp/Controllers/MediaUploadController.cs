@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using EcommerceWebApp.Data.Interfaces;
+﻿using EcommerceWebApp.Data.Interfaces;
 using EcommerceWebApp.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.IO;
 
 namespace EcommerceWebApp.Controllers
 {
@@ -18,7 +15,7 @@ namespace EcommerceWebApp.Controllers
         private readonly IHostingEnvironment env;
 
         CustomsMethod customsMethod = new CustomsMethod();
-        public MediaUploadController( IMediarepo imediarepo,IHostingEnvironment env )
+        public MediaUploadController(IMediarepo imediarepo, IHostingEnvironment env)
         {
             this.imediarepo = imediarepo;
             this.env = env;
@@ -27,7 +24,7 @@ namespace EcommerceWebApp.Controllers
         [HttpGet]
         public IActionResult MediaGallary()
         {
-           var media= imediarepo.GetAll();
+            var media = imediarepo.GetAll();
             return View(media);
         }
         [HttpGet]
@@ -37,18 +34,23 @@ namespace EcommerceWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddMedia(IFormFile iformfile)
+        public IActionResult AddMedia(List<IFormFile> iformfile)
         {
-            var folder= Path.Combine(env.WebRootPath, "images\\shop");
-            var res= customsMethod.PhotoUploadProcessing(iformfile,folder);
-            if(res.Contains("Uploding Fail"))
+            var folder = Path.Combine(env.WebRootPath, "images\\shop");
+
+            foreach (var item in iformfile)
             {
-                ViewBag.Massage(res);
-                return View();
+                var res = customsMethod.PhotoUploadProcessing(item, folder);
+                if (res.Contains("Uploding Fail"))
+                {
+                    ViewBag.Massage(res);
+                    return View();
+                }
+                Media media = new Media();
+                media.FilePath = res;
+                imediarepo.Create(media);
             }
-            Media media = new Media();
-            media.FilePath = res;
-            imediarepo.Create(media);
+
 
             return RedirectToAction("MediaGallary");
         }

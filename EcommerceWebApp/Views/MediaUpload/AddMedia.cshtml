@@ -4,13 +4,17 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<form method="post" enctype="multipart/form-data" asp-action="AddMedia">
-    
-            <input type="file" name="iformfile" />
-            <input type="submit" value="Upload" />
-     
-</form>
-@if (ViewBag.Massage!=null)
+<h2>Upload your Media File Here...</h2>
+<div>
+    <form method="post" enctype="multipart/form-data" asp-action="AddMedia">
+
+        <input type="file" name="iformfile" multiple />
+        <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i>Upload</button>
+
+    </form>
+</div>
+
+@if (ViewBag.Massage != null)
 {
     @ViewBag.Massage;
 }

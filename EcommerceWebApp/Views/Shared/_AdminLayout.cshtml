@@ -329,8 +329,8 @@
                         <ul class="treeview-menu">
                             <li><a asp-controller="Product" asp-action="ProductList"><i class="fa fa-circle-o"></i> List</a></li>
                             <li><a asp-controller="Product" asp-action="ProductAdd"><i class="fa fa-circle-o"></i> Add</a></li>
-                            
-                            
+
+
                         </ul>
                     </li>
                     <li class="treeview">
@@ -338,34 +338,50 @@
                             <i class="fa fa-files-o"></i>
                             <span>Media</span>
                             <i class="fa fa-angle-left pull-right"></i>
-                            
+
                         </a>
                         <ul class="treeview-menu">
                             <li><a asp-controller="MediaUpload" asp-action="MediaGallary"><i class="fa fa-circle-o"></i>All Media</a></li>
                             <li><a asp-controller="MediaUpload" asp-action="AddMedia"><i class="fa fa-circle-o"></i>Add Media</a></li>
-                            
-                           
+
+
                         </ul>
-                    </li>
-                    <li>
-                        <a href="pages/widgets.html">
-                            <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
-                        </a>
                     </li>
 
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-laptop"></i>
-                            <span>UI Elements</span>
+                            <span>Category</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                            <li><a asp-controller="Admin" asp-action="CategoryList"><i class="fa fa-circle-o"></i>CategoryList</a></li>
+                            <li><a asp-controller="Admin" asp-action="AddCategory"><i class="fa fa-circle-o"></i>Add Category</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>Company</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a asp-controller="Admin" asp-action="CompanyList"><i class="fa fa-circle-o"></i>Company List</a></li>
+                            <li><a asp-controller="Admin" asp-action="AddCompany"><i class="fa fa-circle-o"></i>Add Company</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-laptop"></i>
+                            <span>Tag</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a asp-controller="Admin" asp-action="TagList"><i class="fa fa-circle-o"></i>Tag List</a></li>
+                            <li><a asp-controller="Admin" asp-action="AddTag"><i class="fa fa-circle-o"></i>Add Tag</a></li>
+
                         </ul>
                     </li>
                     <li class="treeview">
