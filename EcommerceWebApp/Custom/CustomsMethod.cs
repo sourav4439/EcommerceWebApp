@@ -38,5 +38,15 @@ namespace EcommerceWebApp
 
             }
         }
+        public void Photodeleteprocess(string file, string folder)
+        {
+            if (File.Exists(Path.Combine(folder, file)))
+            {
+                // If file found, delete it    
+                File.Delete(Path.Combine(folder, file));
+               
+            }
+            
+        }
     }
 }

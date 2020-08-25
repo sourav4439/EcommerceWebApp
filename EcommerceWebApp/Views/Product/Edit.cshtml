@@ -1,21 +1,23 @@
 ﻿@model EcommerceWebApp.Models.Product
 
 @{
-    ViewData["Title"] = "ProductAdd";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Product Add</h2>
+<h2>Edit</h2>
 
+<h4>Product</h4>
+<hr />
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="ProductAdd" enctype="multipart/form-data">
+        <form asp-action="Edit" enctype="multipart/form-data">
 
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+            <input asp-for="Id" type="hidden" />
             <div class="input-group">
                 <label asp-for="ProductName" class="input-group-addon"> <i class="fa fa-shopping-cart"></i></label>
                 <input asp-for="ProductName" class="form-control" placeholder="Product Name" />
@@ -71,39 +73,42 @@
                 <label asp-for="FeaturePhotoupload" class="input-group-addon"><i class=" glyphicon glyphicon-picture "></i></label>
                 <input asp-for="FeaturePhotoupload" class="form-control" placeholder="FeaturePhoto" />
                 <span asp-validation-for="FeaturePhotoupload" class="text-danger"></span>
-               
+
             </div> <br />
+            <img src="~/images/shop/@Model.FeaturePhoto" alt="Alternate Text" />
+            <br />
             <div class="input-group">
                 <label asp-for="SidePhotoOneupload" class="input-group-addon"><i class=" glyphicon glyphicon-picture "></i></label>
                 <input asp-for="SidePhotoOneupload" class="form-control" placeholder="SidePhotoOne" />
                 <span asp-validation-for="SidePhotoOneupload" class="text-danger"></span>
-                
+
             </div> <br />
+            <img src="~/images/shop/@Model.SidePhotoOne" alt="Alternate Text" />
             <div class="input-group">
                 <label asp-for="SidePhotoTwoupload" class="input-group-addon"><i class=" glyphicon glyphicon-picture "></i></label>
                 <input asp-for="SidePhotoTwoupload" class="form-control" placeholder="SidePhotoTwo" />
                 <span asp-validation-for="SidePhotoTwoupload" class="text-danger"></span>
-                
+
             </div> <br />
+            <img src="~/images/shop/@Model.SidePhotoTwo" alt="Alternate Text" />
             <div class="input-group">
                 <label asp-for="SidePhotoThreeupload" class="input-group-addon"><i class=" glyphicon glyphicon-picture "></i></label>
                 <input asp-for="SidePhotoThreeupload" class="form-control" placeholder="SidePhotoThree" />
                 <span asp-validation-for="SidePhotoThreeupload" class="text-danger"></span>
-                
+
             </div>
+            <img src="~/images/shop/@Model.SidePhotoThree" alt="Alternate Text" />
             <div class="input-group">
                 <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i>Save</button>
             </div>
         </form>
     </div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    
-
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
