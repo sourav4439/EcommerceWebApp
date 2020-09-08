@@ -5,83 +5,42 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>ProductList</h2>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="productAdd" class="addnewbtn"><i class="fas fa-plus-circle"></i>  Add New Product</a>
 </p>
-<table class="table">
+
+<table>
+    <caption>Product List</caption>
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WebId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Condition)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BandName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>            
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Company)
-            </th>
-          
-            <th>
-                @Html.DisplayNameFor(model => model.Tag)
-            </th>
-            <th>Action</th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.ProductName)</th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.WebId)</th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.Condition)</th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.BandName)</th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.Price)</th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.Company.CompanyName)</th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.Category.CateName)</th>
+            <th scope="col"> Action</th>
+            
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WebId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Condition)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BandName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Company.Id)
-            </td>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.Tag.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td data-label="@Html.DisplayNameFor(model => model.ProductName)">@Html.DisplayFor(modelItem => product.ProductName)</td>
+                <td data-label="@Html.DisplayNameFor(model => model.WebId)">@Html.DisplayFor(modelItem => product.WebId)</td>
+                <td data-label="@Html.DisplayNameFor(model => model.Condition)">@Html.DisplayFor(modelItem => product.Condition)</td>
+                <td data-label="@Html.DisplayNameFor(model => model.BandName)">@Html.DisplayFor(modelItem => product.BandName)</td>
+                <td data-label="@Html.DisplayNameFor(model => model.Price)">@Html.DisplayFor(modelItem => product.Price)</td>
+                <td data-label="@Html.DisplayNameFor(model => model.Company.CompanyName)">@Html.DisplayFor(modelItem => product.Company.CompanyName)</td>
+                <td data-label="@Html.DisplayNameFor(model => model.Category.CateName)">@Html.DisplayFor(modelItem => product.Category.CateName)</td>
+                <td data-label="Action">Button</td>
+                </tr>
+        }
+
+
     </tbody>
 </table>

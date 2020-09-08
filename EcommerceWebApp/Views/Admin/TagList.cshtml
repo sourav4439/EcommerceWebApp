@@ -5,32 +5,30 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>TagList</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="AddTag" asp-controller="Admin" class="addnewbtn"><i class="fas fa-plus-circle"></i>  Add New Tag</a>
 </p>
-<table class="table">
+
+<table>
+    <caption>Tag List</caption>
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TagName)
-            </th>
-            <th></th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.TagName)</th>
+
+            <th scope="col"> Action</th>
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TagName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var tag in Model)
+        {
+            <tr>
+                <td data-label="@Html.DisplayNameFor(model => model.TagName)">@Html.DisplayFor(modelItem => tag.TagName)</td>
+                <td data-label="Action">Button</td>
+            </tr>
+        }
+
+
     </tbody>
 </table>

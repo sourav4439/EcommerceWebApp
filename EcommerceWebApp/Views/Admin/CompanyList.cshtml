@@ -5,38 +5,30 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>CompanyList</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="AddCompany" asp-controller="Admin" class="addnewbtn"><i class="fas fa-plus-circle"></i>  Add New Company</a>
 </p>
-<table class="table">
+
+<table>
+    <caption>Company List</caption>
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CompanyName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th></th>
+            <th scope="col"> @Html.DisplayNameFor(model => model.CompanyName)</th>
+
+            <th scope="col"> Action</th>
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompanyName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var company in Model)
+        {
+            <tr>
+                <td data-label="@Html.DisplayNameFor(model => model.CompanyName)">@Html.DisplayFor(modelItem => company.CompanyName)</td>
+                <td data-label="Action">Button</td>
+            </tr>
+        }
+
+
     </tbody>
 </table>
