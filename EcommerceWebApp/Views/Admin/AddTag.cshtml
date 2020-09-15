@@ -5,25 +5,30 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>AddTag</h2>
 
-<h4>Tag</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="AddTag">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TagName" class="control-label"></label>
-                <input asp-for="TagName" class="form-control" />
-                <span asp-validation-for="TagName" class="text-danger"></span>
+<div class="form-wrapper">
+    <form asp-action="AddTag">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-row">
+            <div class="col-15">
+                <label asp-for="TagName" class="input-label"></label>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+
+            <div class="col-75">
+                <input asp-for="TagName" class="user-input" />
+                <span asp-validation-for="TagName" class="validation-text"></span>
+
+
             </div>
-        </form>
-    </div>
-</div>
+        </div>
+        
+
+        <div class="btn-row">
+            <input type="submit" value="Create" class="btn-submit" />
+        </div>
+
+    </form>
 
 <div>
     <a asp-action="Index">Back to List</a>
